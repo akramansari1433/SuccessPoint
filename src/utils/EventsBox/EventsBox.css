@@ -1,0 +1,14 @@
+.box {
+   padding: 20px;
+   max-width: 350px;
+   height: 450px;
+}
+.event-item {
+   display: flex;
+   flex-wrap: wrap;
+   /* align-items: center; */
+   padding: 10px 0px;
+}
+.event-body {
+   padding: 5px;
+}
