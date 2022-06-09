@@ -56,7 +56,7 @@ export default function AboutUs() {
             Genius Courses Teachers.
          </Typography>
 
-         <Grid container spacing={2} justifyContent="center">
+         <Grid container spacing={4} justifyContent="center">
             <Grid item>
                <Card sx={{ maxWidth: 250 }}>
                   <CardMedia

@@ -19,7 +19,7 @@ export default function NewsBox() {
             }}
          />
          <div className="news-item">
-            <div className="icon-with-text">
+            <div className="icon-text">
                <CalendarMonthIcon />
                <span>11 July 2022</span>
             </div>
@@ -30,7 +30,7 @@ export default function NewsBox() {
          </div>
          <Divider />
          <div className="news-item">
-            <div className="icon-with-text">
+            <div className="icon-text">
                <CalendarMonthIcon />
                <span>11 July 2022</span>
             </div>
