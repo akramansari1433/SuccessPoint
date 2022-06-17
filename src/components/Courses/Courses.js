@@ -6,11 +6,27 @@ import {
    CardContent,
    CardMedia,
    Grid,
+   Modal,
    Typography,
 } from "@mui/material";
 import React from "react";
 
+const style = {
+   position: "absolute",
+   top: "50%",
+   left: "50%",
+   transform: "translate(-50%, -50%)",
+   width: 350,
+   bgcolor: "background.paper",
+   border: "2px solid #000",
+   boxShadow: 24,
+   p: 4,
+};
+
 export default function Courses() {
+   const [open, setOpen] = React.useState(false);
+   const handleOpen = () => setOpen(true);
+   const handleClose = () => setOpen(false);
    return (
       <Box px={5}>
          <Typography
@@ -43,7 +59,11 @@ export default function Courses() {
                      </Typography>
                   </CardContent>
                   <CardActions>
-                     <Button size="small" color="secondary">
+                     <Button
+                        size="small"
+                        color="secondary"
+                        onClick={handleOpen}
+                     >
                         Course Detail
                      </Button>
                      <Button size="small" color="secondary">
@@ -143,6 +163,43 @@ export default function Courses() {
                </Card>
             </Grid>
          </Grid>
+
+         <Modal open={open} onClose={handleClose}>
+            <Box sx={style}>
+               <Typography variant="h6" mb={1}>
+                  Heading
+               </Typography>
+               <Typography variant="body1" mb={1}>
+                  <span style={{ fontWeight: "bold" }}>For :</span> Students
+               </Typography>
+               <Typography variant="body1" mb={1}>
+                  <span style={{ fontWeight: "bold" }}>Type :</span> Foundation
+               </Typography>
+               <Typography variant="body1" mb={1}>
+                  <span style={{ fontWeight: "bold" }}>Subject :</span>{" "}
+                  Economics
+               </Typography>
+               <Typography variant="body1" mb={1}>
+                  <span style={{ fontWeight: "bold" }}>Frequency :</span> Per
+                  Week
+               </Typography>
+               <Typography variant="body1" mb={1}>
+                  <span style={{ fontWeight: "bold" }}>Start Date :</span> Per
+                  Week
+               </Typography>
+               <Typography variant="body1" mb={1}>
+                  <span style={{ fontWeight: "bold" }}>Teachers :</span>{" "}
+                  Teacher1 , Teacher2
+               </Typography>
+               <Typography my={1}>
+                  Description: Duis mollis, est non commodo luctus, nisi erat
+                  porttitor ligula.
+               </Typography>
+               <Button variant="outlined" sx={{ marginTop: 1 }}>
+                  Enroll
+               </Button>
+            </Box>
+         </Modal>
       </Box>
    );
 }
